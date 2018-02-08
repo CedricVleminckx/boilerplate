@@ -8,6 +8,7 @@
     ],
     "require": {
         "twig/twig": "^1.35",
-        "doctrine/dbal": "^2.6"
+        "doctrine/dbal": "^2.6",
+        "philo/laravel-blade": "^3.1"
     }
 }
