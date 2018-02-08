@@ -1,0 +1,25 @@
+{
+  "name": "labo1",
+  "version": "1.0.0",
+  "description": "labo1description",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "https://git.ikdoeict.be/cedric.vleminckx/cws2_labo_01_vleminckx_cedric.git",
+  "author": "Cedric Vleminckx <cedric.vleminckx@student.odisee.be>",
+  "license": "MIT",
+  "dependencies": {
+    "lightbox2": "^2.10.0",
+    "owl.carousel": "^2.2.0"
+  },
+  "devDependencies": {
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-csslint": "^1.0.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-notify": "^3.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-ruby-sass": "^3.0.0"
+  }
+}

@@ -1,0 +1,12 @@
+{
+    "name": "cisco/cws2_labo_01_vleminckx_cedric",
+    "authors": [
+        {
+            "name": "Cedric Vleminckx",
+            "email": "cedric.vleminckx@student.odisee.be"
+        }
+    ],
+    "require": {
+        "twig/twig": "^1.35"
+    }
+}
