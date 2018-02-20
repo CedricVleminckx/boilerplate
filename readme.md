@@ -21,7 +21,7 @@
 	Dbal is handig in gebruik om data uit de databank te halen.
 
 4. Sass
-	Syntax vind ik gemakkelijker in gebruik tegenover sass. Sass word ook veel meer gebruikt en daardoor vind je er gemakkelijker een oplossing voor je probleem.
+	Syntax vind ik gemakkelijker in gebruik tegenover less. Sass word ook veel meer gebruikt en daardoor vind je er gemakkelijker een oplossing voor je probleem.
 
 5. Gulp
 	Is gewoon puur javascript en daardoor mijn voorkeur. Je codeert wat gulp moet doen. Bij grunt moet je meer configureren.
