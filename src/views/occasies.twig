@@ -106,7 +106,12 @@
                            </div>
                            <div class="left">
                               <div class="images thumbs">
-	                            	<a href="uploads/occasies/photos/Altklarinet_Selmer_7.JPG" class="photo"><img src="../uploads/occasies/thumbs/{{ instrument.picture }}" alt="" /></a>
+											{% for photo in photos %}
+											{% if photo.instrument_id == instrument.id %}
+											<p>{{ photo.instrument_id }} + {{ instrument.id }}</p>
+	                            	<a href="../uploads/occasies/photos/{{ photo.filename }}" class="photo"><img src="../uploads/occasies/thumbs/{{ photo.filename }}" alt="" /></a>
+											{% endif %}
+											{% endfor %}
 										</div>
                            </div>
                            <div class="right">

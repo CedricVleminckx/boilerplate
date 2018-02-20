@@ -132,17 +132,43 @@ class __TwigTemplate_5cf8f94c15d7efe82024c53a1b29b325539df5d1bbb70df5d49d5ad7cd1
                            </div>
                            <div class=\"left\">
                               <div class=\"images thumbs\">
-\t                            \t<a href=\"uploads/occasies/photos/Altklarinet_Selmer_7.JPG\" class=\"photo\"><img src=\"../uploads/occasies/thumbs/";
+\t\t\t\t\t\t\t\t\t\t\t";
             // line 109
-            echo twig_escape_filter($this->env, $this->getAttribute($context["instrument"], "picture", array()), "html", null, true);
-            echo "\" alt=\"\" /></a>
-
-\t\t\t\t\t\t\t\t\t\t</div>
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable(($context["photos"] ?? null));
+            foreach ($context['_seq'] as $context["_key"] => $context["photo"]) {
+                // line 110
+                echo "
+\t\t\t\t\t\t\t\t\t\t\t";
+                // line 111
+                if (($this->getAttribute($context["photo"], "instrument_id", array()) == $this->getAttribute($context["instrument"], "id", array()))) {
+                    // line 112
+                    echo "\t\t\t\t\t\t\t\t\t\t\t\t<p>";
+                    echo twig_escape_filter($this->env, $this->getAttribute($context["photo"], "instrument_id", array()), "html", null, true);
+                    echo " + ";
+                    echo twig_escape_filter($this->env, $this->getAttribute($context["instrument"], "id", array()), "html", null, true);
+                    echo "</p>
+\t                            \t<a href=\"../uploads/occasies/photos/";
+                    // line 113
+                    echo twig_escape_filter($this->env, $this->getAttribute($context["photo"], "filename", array()), "html", null, true);
+                    echo "\" class=\"photo\"><img src=\"../uploads/occasies/thumbs/";
+                    echo twig_escape_filter($this->env, $this->getAttribute($context["photo"], "filename", array()), "html", null, true);
+                    echo "\" alt=\"\" /></a>
+\t\t\t\t\t\t\t\t\t\t\t";
+                }
+                // line 115
+                echo "\t\t\t\t\t\t\t\t\t\t\t";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['photo'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 116
+            echo "\t\t\t\t\t\t\t\t\t\t</div>
                            </div>
                            <div class=\"right\">
                               <p>
                                  ";
-            // line 115
+            // line 120
             echo twig_escape_filter($this->env, strip_tags($this->getAttribute($context["instrument"], "description", array())), "html", null, true);
             echo "
                               </p>
@@ -155,7 +181,7 @@ class __TwigTemplate_5cf8f94c15d7efe82024c53a1b29b325539df5d1bbb70df5d49d5ad7cd1
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['instrument'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 122
+        // line 127
         echo "                  </div>
                </div>
             </div>
@@ -190,7 +216,7 @@ class __TwigTemplate_5cf8f94c15d7efe82024c53a1b29b325539df5d1bbb70df5d49d5ad7cd1
 
     public function getDebugInfo()
     {
-        return array (  159 => 122,  146 => 115,  137 => 109,  130 => 105,  125 => 102,  121 => 101,  19 => 1,);
+        return array (  185 => 127,  172 => 120,  166 => 116,  160 => 115,  153 => 113,  146 => 112,  144 => 111,  141 => 110,  137 => 109,  130 => 105,  125 => 102,  121 => 101,  19 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
