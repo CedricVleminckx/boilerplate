@@ -1,3 +1,4 @@
+//TODO: gulp aanpassen en vervolledigen
 var gulp = require('gulp');
 var del = require('del');
 var minifyCSS = require('gulp-minify-css');
