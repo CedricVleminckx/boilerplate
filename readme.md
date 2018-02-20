@@ -1,15 +1,15 @@
 1. text editor
 	Atom: zeer veel editor  packages die je kunt installeren, maar is out of the box al zeer goed. Er is een git en github integratie. Je kan de editor helemaal veranderen aan je eigen keuzes.
 	packages:
-	⋅⋅* Ask Stack
-	⋅⋅* emmet
-	⋅⋅* color-picker
-	⋅⋅* editorconfig
-	⋅⋅* platformio-ide-terminal
-	⋅⋅* todo
-	⋅⋅* blade-snippets
-	⋅⋅* blade-spacer
-	⋅⋅* language-blade
+	* Ask Stack
+	* emmet
+	* color-picker
+	* editorconfig
+	* platformio-ide-terminal
+	* todo
+	* blade-snippets
+	* blade-spacer
+	* language-blade
 	https://atom.io/
 
 2. amp server
