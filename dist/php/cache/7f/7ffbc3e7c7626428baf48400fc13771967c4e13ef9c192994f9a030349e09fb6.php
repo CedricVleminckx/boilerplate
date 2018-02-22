@@ -1,7 +1,7 @@
 <?php
 
 /* occasies.twig */
-class __TwigTemplate_5cf8f94c15d7efe82024c53a1b29b325539df5d1bbb70df5d49d5ad7cd15036b extends Twig_Template
+class __TwigTemplate_5285fb82c66ac8dbe769656c9fac8af3a0390aa55de558c448113e359d7593bf extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
     {
@@ -24,10 +24,10 @@ class __TwigTemplate_5cf8f94c15d7efe82024c53a1b29b325539df5d1bbb70df5d49d5ad7cd1
       <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"/>
       <link href='https://fonts.googleapis.com/css?family=Tinos:400,700italic,700,400italic' rel='stylesheet' type='text/css'>
       <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,400italic,300italic,600italic,700,700italic' rel='stylesheet'>
-      <link rel=\"stylesheet\" href=\"../css/generic.css\" />
-      <link rel=\"stylesheet\" href=\"../css/screen.css\" />
-\t\t<link rel=\"stylesheet\" href=\"../css/fonts.css\" />
-      <link rel=\"stylesheet\" href=\"../css/occasies.css\" />
+      <link rel=\"stylesheet\" href=\"../css/generic.min.css\" />
+      <link rel=\"stylesheet\" href=\"../css/screen.min.css\" />
+\t\t<link rel=\"stylesheet\" href=\"../css/fonts.min.css\" />
+      <link rel=\"stylesheet\" href=\"../css/occasies.min.css\" />
 
 \t\t<link rel=\"stylesheet\" href=\"../../node_modules/owl.carousel/dist/assets/owl.carousel.min.css\">
 \t\t<link rel=\"stylesheet\" href=\"../../node_modules/owl.carousel/dist/assets/owl.theme.default.min.css\">
@@ -93,6 +93,7 @@ class __TwigTemplate_5cf8f94c15d7efe82024c53a1b29b325539df5d1bbb70df5d49d5ad7cd1
             <div class=\"col\">
                <div>
                   <div class=\"filters clearfix\" id=\"filters\">
+\t\t\t\t\t\t\t//TODO: dropdown filters
                      <label id=\"lblSearch\">zoek op instrument:</label>
                      <select id=\"ddlHout\">
                         <option value=\"-1\">HOUTBLAZERS</option>
@@ -123,31 +124,33 @@ class __TwigTemplate_5cf8f94c15d7efe82024c53a1b29b325539df5d1bbb70df5d49d5ad7cd1
                   <h3 class=\"separator\">occasies</h3>
                   <hr>
                   <div id=\"houtblazers\" class=\"occasies\">
+\t\t\t\t\t\t\t//TODO: fout uit forlussen halen
+\t\t\t\t\t\t\t//TODO: lightbox voor fotos
 \t\t\t\t\t\t\t";
-        // line 108
+        // line 111
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["instruments"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["instrument"]) {
-            // line 109
+            // line 112
             echo "                     <div class=\"item clearfix\" data-subtype=\"Altklarinet\">
                         <div class=\"clearfix\">
                            <div class=\"title\">
                               <p>";
-            // line 112
+            // line 115
             echo twig_escape_filter($this->env, $this->getAttribute($context["instrument"], "title", array()), "html", null, true);
             echo "</p>
                            </div>
                            <div class=\"left\">
                               <div class=\"images thumbs\">
 \t\t\t\t\t\t\t\t\t\t\t";
-            // line 116
+            // line 119
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable(($context["photos"] ?? null));
             foreach ($context['_seq'] as $context["_key"] => $context["photo"]) {
-                // line 117
+                // line 120
                 echo "\t\t\t\t\t\t\t\t\t\t\t\t";
                 if (($this->getAttribute($context["photo"], "instrument_id", array()) == $this->getAttribute($context["instrument"], "id", array()))) {
-                    // line 118
+                    // line 121
                     echo "\t\t                            \t<a href=\"../uploads/occasies/photos/";
                     echo twig_escape_filter($this->env, $this->getAttribute($context["photo"], "filename", array()), "html", null, true);
                     echo "\" class=\"photo\"><img src=\"../uploads/occasies/thumbs/";
@@ -155,19 +158,19 @@ class __TwigTemplate_5cf8f94c15d7efe82024c53a1b29b325539df5d1bbb70df5d49d5ad7cd1
                     echo "\" alt=\"\" /></a>
 \t\t\t\t\t\t\t\t\t\t\t\t";
                 }
-                // line 120
+                // line 123
                 echo "\t\t\t\t\t\t\t\t\t\t\t";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['photo'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 121
+            // line 124
             echo "\t\t\t\t\t\t\t\t\t\t</div>
                            </div>
                            <div class=\"right\">
                               <p>
                                  ";
-            // line 125
+            // line 128
             echo twig_escape_filter($this->env, strip_tags($this->getAttribute($context["instrument"], "description", array())), "html", null, true);
             echo "
                               </p>
@@ -180,7 +183,7 @@ class __TwigTemplate_5cf8f94c15d7efe82024c53a1b29b325539df5d1bbb70df5d49d5ad7cd1
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['instrument'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 132
+        // line 135
         echo "                  </div>
                </div>
             </div>
@@ -196,7 +199,7 @@ class __TwigTemplate_5cf8f94c15d7efe82024c53a1b29b325539df5d1bbb70df5d49d5ad7cd1
          </footer>
       </div>
       <script src=\"../../node_modules/jquery/dist/jquery.min.js\"></script>
-      <script src=\"../js/scripts.js\"></script>
+      <script src=\"../js/scripts.min.js\"></script>
 \t\t<script src=\"../../node_modules/owl.carousel/dist/owl.carousel.min.js\"></script>
       </div>
    </body>
@@ -216,7 +219,7 @@ class __TwigTemplate_5cf8f94c15d7efe82024c53a1b29b325539df5d1bbb70df5d49d5ad7cd1
 
     public function getDebugInfo()
     {
-        return array (  184 => 132,  171 => 125,  165 => 121,  159 => 120,  151 => 118,  148 => 117,  144 => 116,  137 => 112,  132 => 109,  128 => 108,  19 => 1,);
+        return array (  187 => 135,  174 => 128,  168 => 124,  162 => 123,  154 => 121,  151 => 120,  147 => 119,  140 => 115,  135 => 112,  131 => 111,  19 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -229,6 +232,6 @@ class __TwigTemplate_5cf8f94c15d7efe82024c53a1b29b325539df5d1bbb70df5d49d5ad7cd1
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "occasies.twig", "C:\\xampp\\htdocs\\www\\cws2_labo_01_vleminckx_cedric\\src\\views\\occasies.twig");
+        return new Twig_Source("", "occasies.twig", "C:\\xampp\\htdocs\\www\\cws2_labo_01_vleminckx_cedric\\dist\\views\\occasies.twig");
     }
 }

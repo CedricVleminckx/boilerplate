@@ -1,4 +1,6 @@
 <?php
+/*TODO: website mag alleen werken als je deployed.
+Dus mappen waaraan niets aangepast moet worden in de dist map zetten, de rest erna verplaatsen met gulp en dan kijken of site werkt.*/
 	require_once __DIR__.'/../../vendor/autoload.php';
 	use Doctrine\DBAL\DriverManager;
 	use Doctrine\DBAL\Configuration;

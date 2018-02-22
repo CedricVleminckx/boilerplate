@@ -1,16 +1,7 @@
 /*
 To install required packages run:
 
-npm install gulp
-del
-gulp-csslint
-gulp-minify-css
-gulp-notify
-gulp-rename
-gulp-ruby-sass
-gulp-uglify
-gulp-preprocess
---save-dev
+npm install gulp del gulp-csslint gulp-minify-css gulp-notify gulp-rename gulp-ruby-sass gulp-uglify gulp-preprocess @aquafadas/gulp-php-minify --save-dev
 */
 /*TODO: 1 extra tool*/
 /*TODO: gulp testen*/
@@ -40,10 +31,15 @@ gulp.task('styles', function() {
             .pipe(gulp.dest('dist/css'));
 });
 
+gulp.task('php', function() {
+    return gulp.src('src/php/*.php')
+            .pipe(gulp.dest('dist/php'));
+});
+
 gulp.task('clean', function(){
-  return del(['dist/css/**/*', 'dist/js/**/*']);
+  return del(['dist/css/**/*', 'dist/js/**/*', 'dist/php/**/*']);
 });
 
 gulp.task('default', ['clean'], function() {
-    gulp.start('scripts', 'styles');
+    gulp.start('scripts', 'styles', 'php');
 });
