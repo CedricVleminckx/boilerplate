@@ -18,7 +18,7 @@
 	$sqlPhotos = "SELECT * FROM photos";
 	$photos = $conn->query($sqlPhotos);
 
-	$loader = new Twig_Loader_Filesystem(__DIR__ . '/../../src/views');
+	$loader = new Twig_Loader_Filesystem(__DIR__ . '/../views');
 	$twig = new Twig_Environment($loader, array(
 		'cache' => __DIR__ . '/cache',
 		'auto_reload' => true
