@@ -17,6 +17,7 @@ Dus mappen waaraan niets aangepast moet worden in de dist map zetten, de rest er
 	$sqlInstruments = "SELECT * FROM instruments";
 	$instruments = $conn->query($sqlInstruments);
 
+/*TODO: in php code photos linken aan instrument*/
 	$sqlPhotos = "SELECT * FROM photos";
 	$photos = $conn->query($sqlPhotos);
 
