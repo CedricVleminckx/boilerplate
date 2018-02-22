@@ -16,6 +16,8 @@
 	Xampp: Uitgebreider dan wamp. Handig voor in de toekomst als je meer zou moeten kunnen doen dan alleen een lokale server opstarten.
 	https://www.apachefriends.org/index.html
 
+	voor een amp server in een vm machine op mac moet je hypervisor activeren
+
 3. Twig + dbal doctrine
 	Twig is zeer gemakkelijk om te gebruiken.
 	Dbal is handig in gebruik om data uit de databank te halen.
