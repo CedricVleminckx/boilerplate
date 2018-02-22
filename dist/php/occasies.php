@@ -14,11 +14,30 @@ Dus mappen waaraan niets aangepast moet worden in de dist map zetten, de rest er
     'charset' => 'utf8',
 	), $config = new Configuration);
 
+	/*Get al instruments*/
 	$sqlInstruments = "SELECT * FROM instruments";
 	$instruments = $conn->query($sqlInstruments);
 
+   /*$sqlInstrumentsPhotos = "SELECT photos.filename, photos.instrument_id FROM photos";
+	$instrumentsPhotos = $conn->query($sqlInstrumentsPhotos);*/
+
+
+/*TODO: in php code photos linken aan instrument*/
+	/*Get all photos*/
 	$sqlPhotos = "SELECT * FROM photos";
 	$photos = $conn->query($sqlPhotos);
+
+	/*Get all banner photos*/
+	$sqlBannerPhotos = "SELECT * FROM bannerphotos";
+	$bannerPhotos = $conn->query($sqlBannerPhotos);
+
+	/*Get all koperblazers*/
+	$sqlKoperBlazer = "SELECT DISTINCT subtype FROM instruments where instruments.type = 'koperblazer'";
+	$koperBlazer = $conn->query($sqlKoperBlazer);
+
+	/*Get all houtblazers*/
+	$sqlHoutBlazer = "SELECT DISTINCT subtype FROM instruments where instruments.type = 'houtblazer'";
+	$houtBlazer = $conn->query($sqlHoutBlazer);
 
 	$loader = new Twig_Loader_Filesystem(__DIR__ . '/../views');
 	$twig = new Twig_Environment($loader, array(
@@ -30,6 +49,9 @@ Dus mappen waaraan niets aangepast moet worden in de dist map zetten, de rest er
 	echo $tpl->render(array(
 		'instruments' => $instruments,
 		'photos' => $photos,
+		'bannerPhotos' => $bannerPhotos,
+		'koperblazers' => $koperBlazer,
+		'houtblazers' => $houtBlazer,
 	));
 
 ?>
