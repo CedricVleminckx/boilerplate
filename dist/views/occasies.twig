@@ -77,21 +77,26 @@
                   <div class="filters clearfix" id="filters">
 							<!--TODO: dropdown filters-->
                      <label id="lblSearch">zoek op instrument:</label>
-                     <select id="ddlHout">
-                        <option value="-1">HOUTBLAZERS</option>
-                        <option value="all">ALLE</option>
-								{% for houtblazer in houtblazers %}
-								<option value="{{houtblazer.subtype}}">{{houtblazer.subtype}}</option>
-								{% endfor %}
-                     </select>
-                     <select id="ddlKoper">
-                        <option value="-1">KOPERBLAZERS</option>
-                        <option value="all">ALLE</option>
-								{% for koperblazer in koperblazers %}
-								<option value="{{koperblazer.subtype}}">{{koperblazer.subtype}}</option>
-								{% endfor %}
-                     </select>
-                     <a href="#" id="lnkAll">bekijk alle occasies</a>
+							<form action="occasies.php" method="GET">
+	                     <select name="hout" id="ddlHout">
+	                        <option value="-1">HOUTBLAZERS</option>
+	                        <option value="all">ALLE</option>
+									{% for houtblazer in houtblazers %}
+									<option value="{{houtblazer.subtype}}">{{houtblazer.subtype}}</option>
+									{% endfor %}
+	                     </select>
+	                     <select name="koper" id="ddlKoper">
+	                        <option value="-1">KOPERBLAZERS</option>
+	                        <option value="all">ALLE</option>
+									{% for koperblazer in koperblazers %}
+									<option value="{{koperblazer.subtype}}">{{koperblazer.subtype}}</option>
+									{% endfor %}
+	                     </select>
+
+								  <input id="lnkAll" type="submit" value="bekijk alle occasies">
+								  <!--<a href="#" type="submit" id="lnkAll">bekijk alle occasies</a>-->
+							</form>
+
                   </div>
                   <h3 class="separator">occasies</h3>
                   <hr>

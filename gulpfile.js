@@ -1,19 +1,15 @@
 /*
 To install required packages run:
 
-npm install gulp del gulp-csslint gulp-minify-css gulp-notify gulp-rename gulp-ruby-sass gulp-uglify gulp-preprocess gulp-imagemin --save-dev
+npm install gulp del gulp-csslint gulp-minify-css  gulp-rename gulp-uglify gulp-imagemin --save-dev
 */
-/*TODO: 1 extra tool*/
 /*TODO: gulp testen*/
 var gulp = require('gulp');
 var del = require('del');
 var minifyCSS = require('gulp-minify-css');
-var notify = require('gulp-notify');
 var rename = require('gulp-rename');
-var sass = require('gulp-ruby-sass');
 var csslint = require('gulp-csslint');
 var uglify = require('gulp-uglify');
-var preprocess = require('gulp-preprocess');
 var imagemin = require('gulp-imagemin');
 
 gulp.task('scripts', function() {
@@ -37,14 +33,14 @@ gulp.task('php', function() {
             .pipe(gulp.dest('dist/php'));
 });
 
-gulp.task('clean', function(){
-  return del(['dist/css/**/*', 'dist/js/**/*', 'dist/php/**/*', 'dist/uploads/**/*']);
-});
-
 gulp.task('images', function(){
 	return gulp.src('src/uploads/**/*')
         .pipe(imagemin())
         .pipe(gulp.dest('dist/uploads'))
+});
+
+gulp.task('clean', function(){
+  return del(['dist/css/**/*', 'dist/js/**/*', 'dist/php/**/*', 'dist/uploads/**/*']);
 });
 
 gulp.task('default', ['clean'], function() {

@@ -13,10 +13,33 @@ Dus mappen waaraan niets aangepast moet worden in de dist map zetten, de rest er
     'driver' => 'pdo_mysql',
     'charset' => 'utf8',
 	), $config = new Configuration);
+	$instruments = "";
+	if (!empty($_GET['hout']) || !empty($_GET['koper'])) {
+		$hout = $_GET['hout'];
+		$koper = $_GET['koper'];
 
-	/*Get al instruments*/
-	$sqlInstruments = "SELECT * FROM instruments";
-	$instruments = $conn->query($sqlInstruments);
+		$sqlInstruments = "SELECT * FROM instruments WHERE instruments.subtype in ('$hout', '$koper')";
+		$instruments = $conn->query($sqlInstruments);
+
+		if($koper == "-1" && $hout = "all"){
+			$sqlInstruments = "SELECT * FROM instruments WHERE instruments.type = 'houtblazer'";
+			$instruments = $conn->query($sqlInstruments);
+		}
+		if($hout == "all" && $koper = "all"){
+			$sqlInstruments = "SELECT * FROM instruments WHERE instruments.type IN ('houtblazer, koperblazer')";
+			$instruments = $conn->query($sqlInstruments);
+		}
+		if($koper == "all" && $hout = "-1"){
+			$sqlInstruments = "SELECT * FROM instruments WHERE instruments.type = 'koperblazer'";
+			$instruments = $conn->query($sqlInstruments);
+		}
+	}
+	else{
+		/*Get al instruments*/
+		$sqlInstruments = "SELECT * FROM instruments";
+		$instruments = $conn->query($sqlInstruments);
+	}
+
 
    /*$sqlInstrumentsPhotos = "SELECT photos.filename, photos.instrument_id FROM photos";
 	$instrumentsPhotos = $conn->query($sqlInstrumentsPhotos);*/
@@ -44,6 +67,8 @@ Dus mappen waaraan niets aangepast moet worden in de dist map zetten, de rest er
 		'cache' => __DIR__ . '/cache',
 		'auto_reload' => true
 	));
+
+
 
 	$tpl = $twig->loadtemplate('occasies.twig');
 	echo $tpl->render(array(
