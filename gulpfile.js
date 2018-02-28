@@ -1,7 +1,7 @@
 /*
 To install required packages run:
 
-npm install gulp del gulp-csslint gulp-minify-css  gulp-rename gulp-uglify gulp-imagemin --save-dev
+npm install gulp del gulp-csslint gulp-minify-css gulp-rename gulp-uglify gulp-imagemin --save-dev
 */
 /*TODO: gulp testen*/
 var gulp = require('gulp');
@@ -33,16 +33,22 @@ gulp.task('php', function() {
             .pipe(gulp.dest('dist/php'));
 });
 
-gulp.task('images', function(){
-	return gulp.src('src/uploads/**/*')
-        .pipe(imagemin())
-        .pipe(gulp.dest('dist/uploads'))
+gulp.task('twig', function() {
+    return gulp.src('src/views/*.twig')
+            .pipe(gulp.dest('dist/views'));
 });
 
+//not used because not every image can be recognised
+//gulp.task('images', function(){
+//	return gulp.src('src/uploads/**/*')
+//        .pipe(imagemin())
+//        .pipe(gulp.dest('dist/uploads'))
+//});
+
 gulp.task('clean', function(){
-  return del(['dist/css/**/*', 'dist/js/**/*', 'dist/php/**/*', 'dist/uploads/**/*']);
+  return del(['dist/css/**/*', 'dist/js/**/*', 'dist/php/**/*', 'dist/views/**/*']);
 });
 
 gulp.task('default', ['clean'], function() {
-    gulp.start('scripts', 'styles', 'php', 'images');
+    gulp.start('scripts', 'styles', 'php', 'twig');
 });

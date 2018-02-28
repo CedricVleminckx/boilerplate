@@ -31,6 +31,7 @@ class __TwigTemplate_5285fb82c66ac8dbe769656c9fac8af3a0390aa55de558c448113e359d7
 
 \t\t<link rel=\"stylesheet\" href=\"../../node_modules/owl.carousel/dist/assets/owl.carousel.min.css\">
 \t\t<link rel=\"stylesheet\" href=\"../../node_modules/owl.carousel/dist/assets/owl.theme.default.min.css\">
+\t\t<link href=\"../../node_modules/lightbox2/dist/css/lightbox.min.css\" rel=\"stylesheet\">
       <style type=\"text/css\">
          #banner_container img {
 \t         max-width: 100%;
@@ -84,11 +85,11 @@ class __TwigTemplate_5285fb82c66ac8dbe769656c9fac8af3a0390aa55de558c448113e359d7
             <div class=\"col\">
 \t\t\t\t\t<div class=\"owl-carousel\">
 \t\t\t\t\t\t";
-        // line 68
+        // line 69
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["bannerPhotos"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["bannerPhoto"]) {
-            // line 69
+            // line 70
             echo "\t\t\t\t\t\t<img src=\"../uploads/bannerfotos/";
             echo twig_escape_filter($this->env, $this->getAttribute($context["bannerPhoto"], "filename", array()), "html", null, true);
             echo "\" alt=\"\">
@@ -97,7 +98,7 @@ class __TwigTemplate_5285fb82c66ac8dbe769656c9fac8af3a0390aa55de558c448113e359d7
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['bannerPhoto'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 71
+        // line 72
         echo "\t\t\t\t\t</div>
             </div>
          </section>
@@ -112,11 +113,11 @@ class __TwigTemplate_5285fb82c66ac8dbe769656c9fac8af3a0390aa55de558c448113e359d7
 \t                        <option value=\"-1\">HOUTBLAZERS</option>
 \t                        <option value=\"all\">ALLE</option>
 \t\t\t\t\t\t\t\t\t";
-        // line 84
+        // line 85
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["houtblazers"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["houtblazer"]) {
-            // line 85
+            // line 86
             echo "\t\t\t\t\t\t\t\t\t<option value=\"";
             echo twig_escape_filter($this->env, $this->getAttribute($context["houtblazer"], "subtype", array()), "html", null, true);
             echo "\">";
@@ -127,17 +128,17 @@ class __TwigTemplate_5285fb82c66ac8dbe769656c9fac8af3a0390aa55de558c448113e359d7
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['houtblazer'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 87
+        // line 88
         echo "\t                     </select>
 \t                     <select name=\"koper\" id=\"ddlKoper\">
 \t                        <option value=\"-1\">KOPERBLAZERS</option>
 \t                        <option value=\"all\">ALLE</option>
 \t\t\t\t\t\t\t\t\t";
-        // line 91
+        // line 92
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["koperblazers"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["koperblazer"]) {
-            // line 92
+            // line 93
             echo "\t\t\t\t\t\t\t\t\t<option value=\"";
             echo twig_escape_filter($this->env, $this->getAttribute($context["koperblazer"], "subtype", array()), "html", null, true);
             echo "\">";
@@ -148,7 +149,7 @@ class __TwigTemplate_5285fb82c66ac8dbe769656c9fac8af3a0390aa55de558c448113e359d7
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['koperblazer'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 94
+        // line 95
         echo "\t                     </select>
 
 \t\t\t\t\t\t\t\t  <input id=\"lnkAll\" type=\"submit\" value=\"bekijk alle occasies\">
@@ -162,48 +163,63 @@ class __TwigTemplate_5285fb82c66ac8dbe769656c9fac8af3a0390aa55de558c448113e359d7
 \t\t\t\t\t\t\t<!--TODO: fout uit forlussen halen-->
 \t\t\t\t\t\t\t<!--TODO: lightbox voor fotos-->
 \t\t\t\t\t\t\t";
-        // line 106
+        // line 107
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["instruments"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["instrument"]) {
-            // line 107
+            // line 108
             echo "                     <div class=\"item clearfix\" data-subtype=\"Altklarinet\">
                         <div class=\"clearfix\">
                            <div class=\"title\">
                               <p>";
-            // line 110
+            // line 111
             echo twig_escape_filter($this->env, $this->getAttribute($context["instrument"], "titel", array()), "html", null, true);
             echo "</p>
                            </div>
                            <div class=\"left\">
                               <div class=\"images thumbs\">
-\t\t                            \t<a href=\"../uploads/occasies/photos/";
-            // line 114
-            echo twig_escape_filter($this->env, $this->getAttribute($context["instrument"], "filename", array()), "html", null, true);
-            echo "\" class=\"photo\"><img src=\"../uploads/occasies/thumbs/";
-            echo twig_escape_filter($this->env, $this->getAttribute($context["instrument"], "filename", array()), "html", null, true);
-            echo "\" alt=\"\" /></a>
-
-
+\t\t\t\t\t\t\t\t\t\t\t";
+            // line 115
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable($this->getAttribute($context["instrument"], "photos", array()));
+            foreach ($context['_seq'] as $context["_key"] => $context["photo"]) {
+                // line 116
+                echo "\t\t                            \t<a href=\"../uploads/occasies/photos/";
+                echo twig_escape_filter($this->env, $this->getAttribute($context["photo"], "filename", array()), "html", null, true);
+                echo "\" class=\"photo\" data-lightbox=\"";
+                echo twig_escape_filter($this->env, $this->getAttribute($context["photo"], "instrument_id", array()), "html", null, true);
+                echo "\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t<img src=\"../uploads/occasies/thumbs/";
+                // line 117
+                echo twig_escape_filter($this->env, $this->getAttribute($context["photo"], "filename", array()), "html", null, true);
+                echo "\" alt=\"\" /></a>
+\t\t\t\t\t\t\t\t\t\t\t";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['photo'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 119
+            echo "
 \t\t\t\t\t\t\t\t\t\t</div>
                            </div>
                            <div class=\"right\">
                               <p>
                                  ";
-            // line 121
+            // line 124
             echo twig_escape_filter($this->env, strip_tags($this->getAttribute($context["instrument"], "description", array())), "html", null, true);
             echo "
                               </p>
                               <p><a href=\"#\" class=\"contact_us\">&gt; contacteer ons voor meer info</a></p>
                            </div>
                         </div>
+\t\t\t\t\t\t\t\t<hr>
                      </div>
 \t\t\t\t\t\t\t";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['instrument'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 128
+        // line 132
         echo "                  </div>
                </div>
             </div>
@@ -221,6 +237,7 @@ class __TwigTemplate_5285fb82c66ac8dbe769656c9fac8af3a0390aa55de558c448113e359d7
       <script src=\"../../node_modules/jquery/dist/jquery.min.js\"></script>
       <script src=\"../js/scripts.min.js\"></script>
 \t\t<script src=\"../../node_modules/owl.carousel/dist/owl.carousel.min.js\"></script>
+\t\t<script src=\"../../node_modules/lightbox2/dist/js/lightbox.min.js\"></script>
       </div>
    </body>
 </html>
@@ -239,7 +256,7 @@ class __TwigTemplate_5285fb82c66ac8dbe769656c9fac8af3a0390aa55de558c448113e359d7
 
     public function getDebugInfo()
     {
-        return array (  207 => 128,  194 => 121,  182 => 114,  175 => 110,  170 => 107,  166 => 106,  152 => 94,  141 => 92,  137 => 91,  131 => 87,  120 => 85,  116 => 84,  101 => 71,  92 => 69,  88 => 68,  19 => 1,);
+        return array (  223 => 132,  209 => 124,  202 => 119,  194 => 117,  187 => 116,  183 => 115,  176 => 111,  171 => 108,  167 => 107,  153 => 95,  142 => 93,  138 => 92,  132 => 88,  121 => 86,  117 => 85,  102 => 72,  93 => 70,  89 => 69,  19 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */

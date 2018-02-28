@@ -13,31 +13,37 @@ Dus mappen waaraan niets aangepast moet worden in de dist map zetten, de rest er
     'driver' => 'pdo_mysql',
     'charset' => 'utf8',
 	), $config = new Configuration);
+
 	$instruments = "";
 	if (!empty($_GET['hout']) || !empty($_GET['koper'])) {
 		$hout = $_GET['hout'];
 		$koper = $_GET['koper'];
 
 		$sqlInstruments = "SELECT * FROM instruments WHERE instruments.subtype in ('$hout', '$koper')";
-		$instruments = $conn->query($sqlInstruments);
+		$stmt = $conn->query($sqlInstruments);
+		$instruments = $stmt->fetchAll();
 
 		if($koper == "-1" && $hout = "all"){
 			$sqlInstruments = "SELECT * FROM instruments WHERE instruments.type = 'houtblazer'";
-			$instruments = $conn->query($sqlInstruments);
+			$stmt = $conn->query($sqlInstruments);
+			$instruments = $stmt->fetchAll();
 		}
 		if($hout == "all" && $koper = "all"){
 			$sqlInstruments = "SELECT * FROM instruments WHERE instruments.type IN ('houtblazer, koperblazer')";
-			$instruments = $conn->query($sqlInstruments);
+			$stmt = $conn->query($sqlInstruments);
+			$instruments = $stmt->fetchAll();
 		}
 		if($koper == "all" && $hout = "-1"){
 			$sqlInstruments = "SELECT * FROM instruments WHERE instruments.type = 'koperblazer'";
-			$instruments = $conn->query($sqlInstruments);
+			$stmt = $conn->query($sqlInstruments);
+			$instruments = $stmt->fetchAll();
 		}
 	}
 	else{
 		/*Get al instruments*/
 		$sqlInstruments = "SELECT * FROM instruments";
-		$instruments = $conn->query($sqlInstruments);
+		$stmt = $conn->query($sqlInstruments);
+		$instruments = $stmt->fetchAll();
 	}
 
 
@@ -48,7 +54,18 @@ Dus mappen waaraan niets aangepast moet worden in de dist map zetten, de rest er
 /*TODO: in php code photos linken aan instrument*/
 	/*Get all photos*/
 	$sqlPhotos = "SELECT * FROM photos";
-	$photos = $conn->query($sqlPhotos);
+	$stmt = $conn->query($sqlPhotos);
+	$photos = $stmt->fetchAll();
+
+	for($x = 0; $x < count($instruments); $x++){
+		$instruments[$x]['photos'] = array();
+
+		foreach ($photos as $photo){
+			if($photo['instrument_id'] == $instruments[$x]['id']){
+				array_push($instruments[$x]['photos'], $photo);
+			}
+		}
+	}
 
 	/*Get all banner photos*/
 	$sqlBannerPhotos = "SELECT * FROM bannerphotos";
